@@ -14,16 +14,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS runtime
 LABEL project=".net" \
       author="vijay"
 
-# Install glibc and locales for globalization support
-RUN apk add --no-cache \
-    ca-certificates \
-    libc6-compat \
-    && apk add --no-cache --virtual .build-deps gcc g++ make \
-    && apk add --no-cache locales \
-    && locale-gen en_US.UTF-8 \
-    && update-locale LANG=en_US.UTF-8 \
-    && apk del .build-deps
-
 # Set the working directory and user
 ARG USERNAME=dotnet
 WORKDIR /apps
