@@ -1,8 +1,8 @@
 # Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
 WORKDIR /src
-COPY . .  # Copy everything in the context into /src
-RUN ls -al /src  # Add this line to verify the files are being copied properly
+COPY . .  
+RUN ls -al /src  
 RUN dotnet build "eShop.csproj" -c Release -o /app/build
 
 
