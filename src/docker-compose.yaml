@@ -263,7 +263,6 @@
 #   db_data:
 
 
-version: '3.8'
 
 services:
   db:
