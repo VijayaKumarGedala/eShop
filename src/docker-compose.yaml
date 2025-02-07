@@ -283,7 +283,7 @@ services:
       - eshop_network
 
   basket-service:
-    build: ./src/Basket.API
+    build: ./Basket.API
     ports:
       - "8080:8080"
     environment:
@@ -295,7 +295,7 @@ services:
       - eshop_network
 
   catalog-service:
-    build: ./src/Catalog.API
+    build: ./Catalog.API
     ports:
       - "8081:8081"
     environment:
@@ -307,7 +307,7 @@ services:
       - eshop_network
 
   identity-service:
-    build: ./src/Identity.API
+    build: ./Identity.API
     ports:
       - "8088:8088"
     environment:
@@ -319,7 +319,7 @@ services:
       - eshop_network
 
   ordering-service:
-    build: ./src/Ordering.API
+    build: ./Ordering.API
     ports:
       - "8091:8091"
     environment:
