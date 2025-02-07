@@ -17,7 +17,7 @@ services:
       - eshop_network
 
   basket-service:
-    build: /Users/vijayakumargedala/Desktop/src/Basket.API/Dockerfile
+    build: src/Basket.API/Dockerfile
     ports:
       - "8080:8080"
     environment:
@@ -29,7 +29,7 @@ services:
       - eshop_network
 
   catalog-service:
-    build: /Users/vijayakumargedala/Desktop/src/Catalog.API/Dockerfile
+    build: src/Catalog.API/Dockerfile
     ports:
       - "8081:8081"
     environment:
@@ -41,7 +41,7 @@ services:
       - eshop_network
 
   client-service:
-    build: /Users/vijayakumargedala/Desktop/src/ClientApp/Dockerfile
+    build: src/ClientApp/Dockerfile
     ports:
       - "8082:8082"
     environment:
@@ -53,7 +53,7 @@ services:
       - eshop_network
 
   eshop.apphost-service:
-    build: /Users/vijayakumargedala/Desktop/src/eshop.AppHost/Dockerfile
+    build: src/eshop.AppHost/Dockerfile
     ports:
       - "8083:8083"
     environment:
@@ -65,7 +65,7 @@ services:
       - eshop_network
 
   eshop.servicedefaults-service:
-    build: /Users/vijayakumargedala/Desktop/src/eshop.ServiceDefaults/Dockerfile
+    build: src/eshop.ServiceDefaults/Dockerfile
     ports:
       - "8084:8084"
     environment:
@@ -77,7 +77,7 @@ services:
       - eshop_network
 
   eventbus-service:
-    build: /Users/vijayakumargedala/Desktop/src/EventBus/Dockerfile
+    build: src/EventBus/Dockerfile
     ports:
       - "8085:8085"
     environment:
@@ -89,7 +89,7 @@ services:
       - eshop_network
 
   eventbusrabbitmq-service:
-    build: /Users/vijayakumargedala/Desktop/src/EventBusRabbitMQ/Dockerfile
+    build: src/EventBusRabbitMQ/Dockerfile
     ports:
       - "8086:8086"
     environment:
@@ -101,7 +101,7 @@ services:
       - eshop_network
 
   hybridapp-service:
-    build: /Users/vijayakumargedala/Desktop/eShop/src/HybridApp/Dockerfile
+    build: eShop/src/HybridApp/Dockerfile
     ports:
       - "8087:8087"
     environment:
@@ -113,7 +113,7 @@ services:
       - eshop_network
 
   identity-service:
-    build: /Users/vijayakumargedala/Desktop/src/Identity.API/Dockerfile
+    build: src/Identity.API/Dockerfile
     ports:
       - "8088:8088"
     environment:
@@ -125,7 +125,7 @@ services:
       - eshop_network
 
   integrationeventlogef-service:
-    build: /Users/vijayakumargedala/Desktop/src/IntegrationEventLogEF/Dockerfile
+    build: src/IntegrationEventLogEF/Dockerfile
     ports:
       - "8089:8089"
     environment:
@@ -137,7 +137,7 @@ services:
       - eshop_network
 
   mobile.bff.shopping-service:
-    build: /Users/vijayakumargedala/Desktop/src/Mobile.Bff.Shopping/Dockerfile
+    build: src/Mobile.Bff.Shopping/Dockerfile
     ports:
       - "8090:8090"
     environment:
@@ -149,7 +149,7 @@ services:
       - eshop_network
 
   ordering.api-service:
-    build: /Users/vijayakumargedala/Desktop/src/Ordering.API/Dockerfile
+    build: src/Ordering.API/Dockerfile
     ports:
       - "8091:8091"
     environment:
@@ -161,7 +161,7 @@ services:
       - eshop_network
 
   ordering.domain-service:
-    build: /Users/vijayakumargedala/Desktop/src/Ordering.Domain/Dockerfile
+    build: src/Ordering.Domain/Dockerfile
     ports:
       - "8092:8092"
     environment:
@@ -173,7 +173,7 @@ services:
       - eshop_network
 
   ordering.infrastructure-service:
-    build: /Users/vijayakumargedala/Desktop/src/Ordering.Infrastructure/Dockerfile
+    build: src/Ordering.Infrastructure/Dockerfile
     ports:
       - "8093:8093"
     environment:
@@ -185,7 +185,7 @@ services:
       - eshop_network
   
   orderprocessor-service:
-    build: /Users/vijayakumargedala/Desktop/src/OrderProcessor/Dockerfile
+    build: src/OrderProcessor/Dockerfile
     ports:
       - "8094:8094"
     environment:
@@ -197,7 +197,7 @@ services:
       - eshop_network
 
   paymentprocessor-service:
-    build: /Users/vijayakumargedala/Desktop/src/PaymentProcessor/Dockerfile
+    build: src/PaymentProcessor/Dockerfile
     ports:
       - "8095:8095"
     environment:
@@ -209,7 +209,7 @@ services:
       - eshop_network
 
   webapp-service:
-    build: /Users/vijayakumargedala/Desktop/src/WebApp/Dockerfile
+    build: src/WebApp/Dockerfile
     ports:
       - "8096:8096"
     environment:
@@ -221,7 +221,7 @@ services:
       - eshop_network
 
   webappcomponents-service:
-    build: /Users/vijayakumargedala/Desktop/src/WebAppComponents/Dockerfile
+    build: src/WebAppComponents/Dockerfile
     ports:
       - "8097:8097"
     environment:
@@ -233,7 +233,7 @@ services:
       - eshop_network
 
   webapphookclient-service:
-    build: /Users/vijayakumargedala/Desktop/src/WebApphookClient/Dockerfile
+    build: src/WebApphookClient/Dockerfile
     ports:
       - "8098:8098"
     environment:
@@ -245,7 +245,7 @@ services:
       - eshop_network
 
   webapphooks.api-service:
-    build: /Users/vijayakumargedala/Desktop/src/WebApphooks.API/Dockerfile
+    build: src/WebApphooks.API/Dockerfile
     ports:
       - "8099:8099"  
     environment:
