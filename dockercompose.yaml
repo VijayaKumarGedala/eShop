@@ -1,0 +1,191 @@
+version: "3.9"
+services:
+  Basket-service:
+    build: ./Basket.API
+    ports:
+      - "8080:8080"
+    environment:
+      - MYSQL_URL=mysql://db:3306/user_db
+    depends_on:
+      - db
+
+  Catalog-service:
+    build: ./Catalog.API
+    ports:
+      - "8081:8081"
+    environment:
+      - MYSQL_URL=mysql://db:3306/site_db
+    depends_on:
+      - db
+
+  Client-service:
+    build: ./ClientApp
+    ports:
+      - "8082:8082"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  eshop.AppHost-service:
+    build: ./eshop.AppHost
+    ports:
+      - "8083:8083"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  eshop.ServiceDefaults-service:
+    build: ./eshop.ServiceDefaults
+    ports:
+      - "8084:8084"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  EventBus-service:
+    build: ./EventBus
+    ports:
+      - "8085:8085"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  EventBusRabbitMQ-service:
+    build: ./EventBusRabbitMQ
+    ports:
+      - "8086:8086"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  HybridApp-service:
+    build: ./HybridApp
+    ports:
+      - "8087:8087"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  Identity-service:
+    build: ./Identity.API
+    ports:
+      - "8088:8088"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  IntegrationEventLogEF-service:
+    build: ./IntegrationEventLogEF
+    ports:
+      - "8089:8089"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  Mobile.Bff.Shopping-service:
+    build: ./Mobile.Bff.Shopping
+    ports:
+      - "8090:8090"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  Ordering.API-service:
+    build: ./Ordering.API
+    ports:
+      - "8091:8091"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  Ordering.Domain-service:
+    build: ./Ordering.Domain
+    ports:
+      - "8092:8092"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  Ordering.Infrastructure-service:
+    build: ./Ordering.Infrastructure
+    ports:
+      - "8093:8093"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  OrderProcessor-service:
+    build: ./OrderProcessor
+    ports:
+      - "8094:8094"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  PaymentProcessor-service:
+    build: ./PaymentProcessor
+    ports:
+      - "8095:8095"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  WebApp-service:
+    build: ./WebApp
+    ports:
+      - "8096:8096"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  WebAppComponents-service:
+    build: ./WebAppComponents
+    ports:
+      - "8097:8097"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  WebApphookClient-service:
+    build: ./WebApphookClient
+    ports:
+      - "8098:8098"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+  WebApphooks.API-service:
+    build: ./WebApphooks.API
+    ports:
+      - "8098:8098"
+    environment:
+      - MYSQL_URL=mysql://db:3306/org_db
+    depends_on:
+      - db
+
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=user_db
+    ports:
+      - "3306:3306"
+

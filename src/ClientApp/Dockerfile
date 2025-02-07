@@ -1,14 +1,13 @@
-# Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
 WORKDIR /src
 COPY . .  
 RUN ls -al /src  
-RUN dotnet build "*.csproj" -c Release -o /app/build
+RUN dotnet build "ClientApp.csproj" -c Release -o /app/build
 
 
 # Publish Stage
 WORKDIR /src
-RUN dotnet publish "*.csproj" -c Release -o /app/published
+RUN dotnet publish "ClientApp.csproj" -c Release -o /app/published
 WORKDIR /app/published
 
 # Runtime Stage
@@ -23,4 +22,4 @@ COPY --from=build --chown=${USERNAME}:${USERNAME} /app/published .
 USER ${USERNAME}
 
 # Set entry point to run the application
-ENTRYPOINT ["dotnet", "*.dll"]
+ENTRYPOINT ["dotnet", "ClientApp.dll"]
