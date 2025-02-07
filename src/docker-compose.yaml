@@ -331,7 +331,7 @@ services:
       - eshop_network
 
   webapp:
-    build: ./src/WebApp
+    build: ./WebApp
     ports:
       - "8096:8096"
     environment:
