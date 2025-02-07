@@ -233,7 +233,7 @@ services:
       - eshop_network
 
   webapphookclient-service:
-    build: ./WebApphookClient 
+    build: ./WebhookClient 
     ports:
       - "8098:8098"
     environment:
@@ -245,7 +245,7 @@ services:
       - eshop_network
 
   webapphooks.api-service:
-    build: ./WebApphooks.API 
+    build: ./Webhooks.API 
     ports:
       - "8099:8099"  
     environment:
