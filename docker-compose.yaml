@@ -26,7 +26,7 @@ services:
     depends_on:
       - db
 
-  eshop.AppHost-service:
+  eshop.appHost-service:
     build: ./eshop.AppHost
     ports:
       - "8083:8083"
@@ -35,7 +35,7 @@ services:
     depends_on:
       - db
 
-  eshop.ServiceDefaults-service:
+  eshop.servicedefaults-service:
     build: ./eshop.ServiceDefaults
     ports:
       - "8084:8084"
@@ -44,7 +44,7 @@ services:
     depends_on:
       - db
 
-  eventBus-service:
+  eventbus-service:
     build: ./EventBus
     ports:
       - "8085:8085"
@@ -53,7 +53,7 @@ services:
     depends_on:
       - db
 
-  eventBusRabbitMQ-service:
+  eventbusrabbitmq-service:
     build: ./EventBusRabbitMQ
     ports:
       - "8086:8086"
@@ -62,7 +62,7 @@ services:
     depends_on:
       - db
 
-  hybridApp-service:
+  hybridapp-service:
     build: ./HybridApp
     ports:
       - "8087:8087"
@@ -80,7 +80,7 @@ services:
     depends_on:
       - db
 
-  integrationEventLogEF-service:
+  integrationeventlogef-service:
     build: ./IntegrationEventLogEF
     ports:
       - "8089:8089"
@@ -89,7 +89,7 @@ services:
     depends_on:
       - db
 
-  mobile.Bff.Shopping-service:
+  mobile.bff.shopping-service:
     build: ./Mobile.Bff.Shopping
     ports:
       - "8090:8090"
@@ -98,7 +98,7 @@ services:
     depends_on:
       - db
 
-  ordering.API-service:
+  ordering.api-service:
     build: ./Ordering.API
     ports:
       - "8091:8091"
@@ -107,7 +107,7 @@ services:
     depends_on:
       - db
 
-  ordering.Domain-service:
+  ordering.domain-service:
     build: ./Ordering.Domain
     ports:
       - "8092:8092"
@@ -116,7 +116,7 @@ services:
     depends_on:
       - db
 
-  ordering.Infrastructure-service:
+  ordering.infrastructure-service:
     build: ./Ordering.Infrastructure
     ports:
       - "8093:8093"
@@ -125,7 +125,7 @@ services:
     depends_on:
       - db
 
-  orderProcessor-service:
+  orderprocessor-service:
     build: ./OrderProcessor
     ports:
       - "8094:8094"
@@ -134,7 +134,7 @@ services:
     depends_on:
       - db
 
-  paymentProcessor-service:
+  paymentprocessor-service:
     build: ./PaymentProcessor
     ports:
       - "8095:8095"
@@ -143,7 +143,7 @@ services:
     depends_on:
       - db
 
-  webApp-service:
+  webapp-service:
     build: ./WebApp
     ports:
       - "8096:8096"
@@ -152,7 +152,7 @@ services:
     depends_on:
       - db
 
-  webAppComponents-service:
+  webappcomponents-service:
     build: ./WebAppComponents
     ports:
       - "8097:8097"
@@ -161,7 +161,7 @@ services:
     depends_on:
       - db
 
-  webApphookClient-service:
+  webapphookclient-service:
     build: ./WebApphookClient
     ports:
       - "8098:8098"
@@ -170,7 +170,7 @@ services:
     depends_on:
       - db
 
-  webApphooks.API-service:
+  webapphooks.api-service:
     build: ./WebApphooks.API
     ports:
       - "8098:8098"
