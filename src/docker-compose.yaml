@@ -1,9 +1,276 @@
+# services:
+#   db:
+#     image: mysql:5.7
+#     restart: always
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=secret
+#     volumes:
+#       - db_data:/var/lib/mysql
+#       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#     healthcheck:
+#       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+#       interval: 10s
+#       retries: 5
+#     ports:
+#       - "3306:3306"
+#     networks:
+#       - eshop_network
+
+#   basket-service:
+#     build: ./Basket.API
+#     ports:
+#       - "8080:8080"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/basket_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   catalog-service:
+#     build: ./Catalog.API 
+#     ports:
+#       - "8081:8081"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/catalog_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   client-service:
+#     build: ./ClientApp 
+#     ports:
+#       - "8082:8082"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/client_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   eshop.apphost-service:
+#     build: ./eshop.AppHost 
+#     ports:
+#       - "8083:8083"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/apphost_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   eshop.servicedefaults-service:
+#     build: ./eshop.ServiceDefaults 
+#     ports:
+#       - "8084:8084"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/servicedefaults_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   eventbus-service:
+#     build: ./EventBus 
+#     ports:
+#       - "8085:8085"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/eventbus_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   eventbusrabbitmq-service:
+#     build: ./EventBusRabbitMQ 
+#     ports:
+#       - "8086:8086"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/eventbusrabbitmq_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   hybridapp-service:
+#     build: ./HybridApp 
+#     ports:
+#       - "8087:8087"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/hybridapp_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   identity-service:
+#     build: ./Identity.API 
+#     ports:
+#       - "8088:8088"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/identity_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   integrationeventlogef-service:
+#     build: ./IntegrationEventLogEF 
+#     ports:
+#       - "8089:8089"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/integrationeventlogef_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   mobile.bff.shopping-service:
+#     build: ./Mobile.Bff.Shopping 
+#     ports:
+#       - "8090:8090"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/mobile.bff_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   ordering.api-service:
+#     build: ./Ordering.API 
+#     ports:
+#       - "8091:8091"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/ordering_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   ordering.domain-service:
+#     build: ./Ordering.Domain 
+#     ports:
+#       - "8092:8092"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/ordering.domain_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   ordering.infrastructure-service:
+#     build: ./Ordering.Infrastructure 
+#     ports:
+#       - "8093:8093"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/ordering.infrastructure_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+  
+#   orderprocessor-service:
+#     build: ./OrderProcessor 
+#     ports:
+#       - "8094:8094"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/orderprocessor_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   paymentprocessor-service:
+#     build: ./PaymentProcessor 
+#     ports:
+#       - "8095:8095"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/paymentprocessor_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   webapp-service:
+#     build: ./WebApp 
+#     ports:
+#       - "8096:8096"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/webapp_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   webappcomponents-service:
+#     build: ./WebAppComponents 
+#     ports:
+#       - "8097:8097"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/webappcomponents_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   webapphookclient-service:
+#     build: ./WebhookClient 
+#     ports:
+#       - "8098:8098"
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/webapphookclient_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+#   webapphooks.api-service:
+#     build: ./Webhooks.API 
+#     ports:
+#       - "8099:8099"  
+#     environment:
+#       - MYSQL_URL=mysql://root:secret@db:3306/webapphooks_db
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     networks:
+#       - eshop_network
+
+# networks:
+#   eshop_network:
+
+# volumes:
+#   db_data:
+
+
+version: '3.8'
+
 services:
   db:
     image: mysql:5.7
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=secret
+      MYSQL_ROOT_PASSWORD: secret
     volumes:
       - db_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -17,7 +284,7 @@ services:
       - eshop_network
 
   basket-service:
-    build: ./Basket.API
+    build: ./src/Basket.API
     ports:
       - "8080:8080"
     environment:
@@ -29,7 +296,7 @@ services:
       - eshop_network
 
   catalog-service:
-    build: ./Catalog.API 
+    build: ./src/Catalog.API
     ports:
       - "8081:8081"
     environment:
@@ -40,80 +307,8 @@ services:
     networks:
       - eshop_network
 
-  client-service:
-    build: ./ClientApp 
-    ports:
-      - "8082:8082"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/client_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  eshop.apphost-service:
-    build: ./eshop.AppHost 
-    ports:
-      - "8083:8083"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/apphost_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  eshop.servicedefaults-service:
-    build: ./eshop.ServiceDefaults 
-    ports:
-      - "8084:8084"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/servicedefaults_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  eventbus-service:
-    build: ./EventBus 
-    ports:
-      - "8085:8085"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/eventbus_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  eventbusrabbitmq-service:
-    build: ./EventBusRabbitMQ 
-    ports:
-      - "8086:8086"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/eventbusrabbitmq_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  hybridapp-service:
-    build: ./HybridApp 
-    ports:
-      - "8087:8087"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/hybridapp_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
   identity-service:
-    build: ./Identity.API 
+    build: ./src/Identity.API
     ports:
       - "8088:8088"
     environment:
@@ -124,32 +319,8 @@ services:
     networks:
       - eshop_network
 
-  integrationeventlogef-service:
-    build: ./IntegrationEventLogEF 
-    ports:
-      - "8089:8089"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/integrationeventlogef_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  mobile.bff.shopping-service:
-    build: ./Mobile.Bff.Shopping 
-    ports:
-      - "8090:8090"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/mobile.bff_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  ordering.api-service:
-    build: ./Ordering.API 
+  ordering-service:
+    build: ./src/Ordering.API
     ports:
       - "8091:8091"
     environment:
@@ -160,96 +331,12 @@ services:
     networks:
       - eshop_network
 
-  ordering.domain-service:
-    build: ./Ordering.Domain 
-    ports:
-      - "8092:8092"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/ordering.domain_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  ordering.infrastructure-service:
-    build: ./Ordering.Infrastructure 
-    ports:
-      - "8093:8093"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/ordering.infrastructure_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-  
-  orderprocessor-service:
-    build: ./OrderProcessor 
-    ports:
-      - "8094:8094"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/orderprocessor_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  paymentprocessor-service:
-    build: ./PaymentProcessor 
-    ports:
-      - "8095:8095"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/paymentprocessor_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  webapp-service:
-    build: ./WebApp 
+  webapp:
+    build: ./src/WebApp
     ports:
       - "8096:8096"
     environment:
       - MYSQL_URL=mysql://root:secret@db:3306/webapp_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  webappcomponents-service:
-    build: ./WebAppComponents 
-    ports:
-      - "8097:8097"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/webappcomponents_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  webapphookclient-service:
-    build: ./WebhookClient 
-    ports:
-      - "8098:8098"
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/webapphookclient_db
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - eshop_network
-
-  webapphooks.api-service:
-    build: ./Webhooks.API 
-    ports:
-      - "8099:8099"  
-    environment:
-      - MYSQL_URL=mysql://root:secret@db:3306/webapphooks_db
     depends_on:
       db:
         condition: service_healthy
@@ -261,3 +348,4 @@ networks:
 
 volumes:
   db_data:
+
