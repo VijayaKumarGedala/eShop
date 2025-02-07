@@ -1,0 +1,41 @@
+# Ignore common files and directories
+.git
+.gitignore
+.idea/
+.vscode/
+*.suo
+*.user
+*.sln.docstates
+*.cache
+packages/
+node_modules/
+bower_components/
+obj/
+bin/
+**/node_modules
+**/bower_components
+**/obj
+**/bin
+
+# Ignore Docker-related files (unless specifically needed in the build)
+docker-compose.override.yml
+docker-compose.yml
+Dockerfile* # Prevents potentially including other Dockerfiles
+
+# Ignore temporary files and build artifacts
+*.log
+*.tmp
+*.swp
+*~
+# Ignore specific folders for each service
+src/**/bin/*
+src/**/obj/*
+src/**/node_modules/*
+
+# Specific project ignores (adjust as needed)
+**/Properties/launchSettings.json
+**/secrets.dev.json
+**/appsettings.Development.json
+
+# Ignore artifacts from building the web app
+dist/
