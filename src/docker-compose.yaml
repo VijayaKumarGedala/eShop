@@ -17,7 +17,7 @@ services:
       - eshop_network
 
   basket-service:
-    build: ./Basket.API/Dockerfile
+    build: ./Basket.API
     ports:
       - "8080:8080"
     environment:
@@ -29,7 +29,7 @@ services:
       - eshop_network
 
   catalog-service:
-    build: ./Catalog.API/Dockerfile
+    build: ./Catalog.API 
     ports:
       - "8081:8081"
     environment:
@@ -41,7 +41,7 @@ services:
       - eshop_network
 
   client-service:
-    build: ./ClientApp/Dockerfile
+    build: ./ClientApp 
     ports:
       - "8082:8082"
     environment:
@@ -53,7 +53,7 @@ services:
       - eshop_network
 
   eshop.apphost-service:
-    build: ./eshop.AppHost/Dockerfile
+    build: ./eshop.AppHost 
     ports:
       - "8083:8083"
     environment:
@@ -65,7 +65,7 @@ services:
       - eshop_network
 
   eshop.servicedefaults-service:
-    build: ./eshop.ServiceDefaults/Dockerfile
+    build: ./eshop.ServiceDefaults 
     ports:
       - "8084:8084"
     environment:
@@ -77,7 +77,7 @@ services:
       - eshop_network
 
   eventbus-service:
-    build: ./EventBus/Dockerfile
+    build: ./EventBus 
     ports:
       - "8085:8085"
     environment:
@@ -89,7 +89,7 @@ services:
       - eshop_network
 
   eventbusrabbitmq-service:
-    build: ./EventBusRabbitMQ/Dockerfile
+    build: ./EventBusRabbitMQ 
     ports:
       - "8086:8086"
     environment:
@@ -101,7 +101,7 @@ services:
       - eshop_network
 
   hybridapp-service:
-    build: ./HybridApp/Dockerfile
+    build: ./HybridApp 
     ports:
       - "8087:8087"
     environment:
@@ -113,7 +113,7 @@ services:
       - eshop_network
 
   identity-service:
-    build: ./Identity.API/Dockerfile
+    build: ./Identity.API 
     ports:
       - "8088:8088"
     environment:
@@ -125,7 +125,7 @@ services:
       - eshop_network
 
   integrationeventlogef-service:
-    build: ./IntegrationEventLogEF/Dockerfile
+    build: ./IntegrationEventLogEF 
     ports:
       - "8089:8089"
     environment:
@@ -137,7 +137,7 @@ services:
       - eshop_network
 
   mobile.bff.shopping-service:
-    build: ./Mobile.Bff.Shopping/Dockerfile
+    build: ./Mobile.Bff.Shopping 
     ports:
       - "8090:8090"
     environment:
@@ -149,7 +149,7 @@ services:
       - eshop_network
 
   ordering.api-service:
-    build: ./Ordering.API/Dockerfile
+    build: ./Ordering.API 
     ports:
       - "8091:8091"
     environment:
@@ -161,7 +161,7 @@ services:
       - eshop_network
 
   ordering.domain-service:
-    build: ./Ordering.Domain/Dockerfile
+    build: ./Ordering.Domain 
     ports:
       - "8092:8092"
     environment:
@@ -173,7 +173,7 @@ services:
       - eshop_network
 
   ordering.infrastructure-service:
-    build: ./Ordering.Infrastructure/Dockerfile
+    build: ./Ordering.Infrastructure 
     ports:
       - "8093:8093"
     environment:
@@ -185,7 +185,7 @@ services:
       - eshop_network
   
   orderprocessor-service:
-    build: ./OrderProcessor/Dockerfile
+    build: ./OrderProcessor 
     ports:
       - "8094:8094"
     environment:
@@ -197,7 +197,7 @@ services:
       - eshop_network
 
   paymentprocessor-service:
-    build: ./PaymentProcessor/Dockerfile
+    build: ./PaymentProcessor 
     ports:
       - "8095:8095"
     environment:
@@ -209,7 +209,7 @@ services:
       - eshop_network
 
   webapp-service:
-    build: ./WebApp/Dockerfile
+    build: ./WebApp 
     ports:
       - "8096:8096"
     environment:
@@ -221,7 +221,7 @@ services:
       - eshop_network
 
   webappcomponents-service:
-    build: ./WebAppComponents/Dockerfile
+    build: ./WebAppComponents 
     ports:
       - "8097:8097"
     environment:
@@ -233,7 +233,7 @@ services:
       - eshop_network
 
   webapphookclient-service:
-    build: ./WebApphookClient/Dockerfile
+    build: ./WebApphookClient 
     ports:
       - "8098:8098"
     environment:
@@ -245,7 +245,7 @@ services:
       - eshop_network
 
   webapphooks.api-service:
-    build: ./WebApphooks.API/Dockerfile
+    build: ./WebApphooks.API 
     ports:
       - "8099:8099"  
     environment:
